@@ -8,11 +8,7 @@ VALUES
 ('Marco', 'Romano', 'marco.romano@outlook.it', '+393874662', 'MRCRMN04D14G273'),
 ('Sara', 'Gallo', 'sara.gallo@icloud.com', '+393874663', 'SRAGLL05E55C351'),
 ('Davide', 'Conti', 'davide.conti@virgilio.it', '+393874664', 'DVDCNT06F66D612'),
-('Mario','Rossi','mario.rossi@libero.it','+393823493834','RSIMRT45E33T494K');
-Select * from Studenti
-
-INSERT INTO Studenti (Nome, Cognome, DataNascita, Email, Telefono, CodiceFiscale)
-VALUES
+('Mario','Rossi','mario.rossi@libero.it','+393823493834','RSIMRT45E33T494K'),
 ('Mario','Rossi','2000-01-10','mario.rossi1@email.com','300000001','RSSMRA00A10H501A'),
 ('Luca','Bianchi','1999-03-15','luca.bianchi2@email.com','300000002','BNCLCU99C15F205B'),
 ('Anna','Verdi','2001-07-20','anna.verdi3@email.com','300000003','VRDANN01L20H501C'),
