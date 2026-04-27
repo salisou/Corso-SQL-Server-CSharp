@@ -6,7 +6,7 @@ go
 		SUM, AVG, COUNT, MIN e MAX permettono calcoli su gruppi di dati in SQL Server.
 
 	Having: 
-		SELECT 
+		SELECT  
 			....
 		FROM ....
 		GROUP BY ...
@@ -118,13 +118,7 @@ LEFT JOIN Iscrizioni i ON i.StudenteId = s.StudenteId
 LEFT JOIN Corsi c ON c.CorsoId = i.CorsoId
 
 
--- COUNT CON JOIN
--- Contare gli studenti per coso(Left Join, GROUP by)
-SELECT
-	NomeCorso,
-FROM Corsi c       
-LEFT JOIN
-GROUP BY
+
 
 
 select * from Studenti;
