@@ -32,6 +32,12 @@ use ScuolaDb;
 		ALTER     → modifica struttura
 		UPDATE    → modifica dati
 		DELETE    → elimina dati
+		RIGHT JOIN → come LEFT ma invertito
+		SUBQUERY → query dentro query
+		IN → confronto con lista
+		EXISTS → più performante
+		NOT EXISTS → negazione
+		STORE PROCEDURE
 */
 
 
@@ -139,3 +145,45 @@ EXEC sp_GetAllStudenti;
 EXEC sp_GetStudenteById 2;
 
 
+-- Restituisce lo stundet con il nome
+EXEC sp_GetStudenteByName 'Anna'
+
+
+-- SUBQUERY (SOPRAQUERY)
+SELECT
+*
+FROM Corsi  
+WHERE Durata IN (50, 40) 
+
+
+-- STUDENTI SCRITTI
+SELECT
+	*
+FROM Studenti AS s
+INNER JOIN Iscrizioni AS i 
+	ON i.StudenteId = s.StudenteId
+INNER JOIN Corsi AS c 
+	ON c.CorsoId = i.CorsoId;
+
+
+SELECT
+	*
+FROM Studenti AS s
+WHERE EXISTS(
+	SELECT 1
+	FROM Iscrizioni AS i 
+	WHERE i.StudenteId = s.StudenteId
+);
+
+
+-- Studenti non scritti
+SELECT
+	*
+FROM Studenti AS s
+WHERE NOT EXISTS(
+	SELECT 1
+	FROM Iscrizioni AS i 
+	WHERE i.StudenteId = s.StudenteId
+);
+
+-- EXISTES/ NOT EXISTES
